@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23507" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Player" representedClassName="Player" syncable="YES">
+        <attribute name="battingStyle" optional="YES" attributeType="String"/>
+        <attribute name="bowlingStyle" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="imageId" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="playerId" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <relationship name="fromTeam" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="toPlayer" inverseEntity="Team"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES">
+        <attribute name="countryName" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="imageId" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="teamId" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="teamName" optional="YES" attributeType="String"/>
+        <attribute name="teamSName" optional="YES" attributeType="String"/>
+        <relationship name="toPlayer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="fromTeam" inverseEntity="Player"/>
+    </entity>
+</model>
